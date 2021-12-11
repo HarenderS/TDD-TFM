@@ -85,3 +85,13 @@ También es importante remarcar el uso de la técnica del doble bucle:
 En consecuencia, no habrá muchos cambios oscilantes hacia arriba y hacia abajo de las capas.
 La API se puede adaptar a las necesidades del producto y no al revés.             |                                                                                              
 		
+
+
+### Bibliografía
+```
+https://itnext.io/outside-in-or-inside-out-london-or-chicago-school-part-1-greenfield-projects-d324390a0dbd
+https://www.adictosaltrabajo.com/2016/01/29/tdd-outside-in-vs-inside-out/
+https://8thlight.com/blog/georgina-mcfadyen/2016/06/27/inside-out-tdd-vs-outside-in.html
+https://ed.team/blog/que-es-el-tdd
+https://softwarecrafters.io/javascript/tdd-test-driven-development
+```
