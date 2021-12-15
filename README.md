@@ -14,8 +14,8 @@ Para el uso del TDD se deben combinar 2 metodologías: Test-first development (e
 
 Complicaciones que puede haber:
 - Hay que pensar en lo que se quiere conseguir con el código y en cómo protegerlo para que no se rompa (probarlo).
--	Tiene una curva de aprendizaje muy pronunciada. Es necesario aprender los principios y patrones de diseño para crear un código limpio y cómo refactorizarlo para mantenerlo así.
--	El código se defiende. El código existente que no está bajo prueba te pilla entre la espada y la pared. Necesita refactorizarlo para ponerlo bajo prueba y necesitas pruebas para refactorizarlo.
+- Tiene una curva de aprendizaje muy pronunciada. Es necesario aprender los principios y patrones de diseño para crear un código limpio y cómo refactorizarlo para mantenerlo así.
+- El código se defiende. El código existente que no está bajo prueba te pilla entre la espada y la pared. Necesita refactorizarlo para ponerlo bajo prueba y necesitas pruebas para refactorizarlo.
 
 Los errores más comunes:
 - No seguir el enfoque de «primero la prueba».
@@ -25,6 +25,32 @@ Los errores más comunes:
 - Escribir pruebas que son lentas. Todo el conjunto debería completarse en minutos o incluso en segundos.
 - Escribir pruebas sin aserciones.
 - No escribir el codigo minimo (suficiente para aprobar el test creado no mas).
+
+### Experimentos
+En 2008 se hicieron varios experimentos con varios equipos en igualdad de condiciciones haciendo distintos desarollos, esos equipos se dividieron en dos unos haciendo desarrollos con TDD y otros sin TDD. Todos los equipos eran similares entre sí en tamaño y velocida y fueron seleccionados en función de sus diferentes características:
+- Tenía un nivel de experiencia de desarrollo diferente, de menor a mayor.
+- Tenía un nivel de experiencia de dominio diferente, de menor a mayor.
+- Utiliza diferentes lenguajes y entornos de programación: Java, C ++, .NET.
+
+Tras finalizar los experimentos, hallazgos fueron realmente interesantes:
+- Los equipos de TDD estaban creando software con menos errores.
+- Un equipo hizo un 40% menos de defectos que el equipo que no usaba a TDD.
+- Otro equipo hizo entre 60–90% menos defectos que los becarios que usaban no TDD.
+- Los equipos de TDD dedicaron entre un 15% y un 33% más de tiempo a escribir el código.
+- El aspecto importante para mejorar la calidad fue la creación de la infraestructura de prueba automatizada, pruebas unitarias, de integración y funcionales.
+- Los equipos que continuaron usando TDD después del experimento experimentaron una menor cantidad de defectos en la producción.
+- La información interesante provino de un equipo de IBM que participo en el experimento. Después del experimento, algunos de los miembros del equipo dejaron de ejecutar las pruebas unitarias de regresión. La situación resultó en una mayor cantidad de defectos en la producción. 
+
+Otro experimento se llevó a cabo entre 24 desarrolladores de software experimentados que se enfrentaron en pares. Donde un par escribía el código usando el TDD y otro par no. Los autores del experimento prepararon 20 pruebas de caja negra para verificar los resultados.
+
+Los hallazgos fueron:
+- Las aplicaciones escritas por los desarrolladores de TDD pasaron en promedio un 18% más de casos de prueba de caja negra que las aplicaciones escritas por desarrolladores que no son de TDD.
+- Después del experimento, los desarrolladores reconocieron que TDD ayuda a comprender mejor los requisitos comerciales y que TDD facilitó su trabajo al reducir el tiempo y la energía para la depuración.
+
+#### Resumen: ¿Vale la pena TDD?
+Fuentes confiables confirman que el desarrollo basado en pruebas se conecta directamente con la mayor calidad del código, lo que resulta en menos defectos. El costo de la sobrecarga de tiempo para escribir las pruebas unitarias se paga rápidamente porque el costo de los cambios que deben realizarse más tarde sin una cobertura de prueba automatizada es mucho mayor, en escenarios pesimistas puede aumentar exponencialmente. En los lenguajes orientados a objetos, TDD está bien examinado y el retorno de la inversión (ROI) de los proyectos está respaldado con la mejor calidad.
+
+Pero las pruebas unitarias no debería ser la única capa de pruebas automatizadas de su sistema. También se expandir la capa de prueba unitaria mediante pruebas de integración, desarrollo impulsado por pruebas de aceptación (ATDD), desarrollo impulsado por el comportamiento (BDD) o, al menos, considerar dicha opción en su propio.
 
 ## Inside-Out
 
