@@ -125,3 +125,8 @@ Que es TDD: https://ed.team/blog/que-es-el-tdd
 
 TDD: https://softwarecrafters.io/javascript/tdd-test-driven-development
 
+Cost of the changes: https://www.crowdbotics.com/blog/tdd-x-roi-is-test-driven-development-worth-the-money
+
+[Nagappan et al.] Nachiappan Nagappan, E. Michael Maximilien, Thirumalesh Bhat, Laurie Williams. Realizing quality improvement through test driven development: results and experiences of four industrial teams. Kluwer Academic Publishers, 2008. doi>10.1007/s10664–008–9062-z.
+
+[Boby et al.] Boby George, Laurie Williams. An Initial Investigation of Test Driven Development in Industry. 2003. ISBN 1581136242. doi>10.1145/952532.952753.
