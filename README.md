@@ -1,16 +1,15 @@
 # TDD-TFM
 
 ## TDD
-Es una metodología de desarrollo cuyo objetivo es crear primero las pruebas y luego escribir el software. Sus siglas en Inglés son: Test Driven Development y en español significa: Desarrollo guiado por pruebas.
-
-Este concepto no es nada nuevo, fue a finales de los años 80 cuando se comenzó a utilizar esta metodología de desarrollo.
-
-El test-driven development se orienta según los resultados de los casos de prueba definidos por los desarrolladores. Su estructura cíclica garantiza que el código se transmita al sistema productivo únicamente cuando se hayan cumplido todos los requisitos del software. En otras palabras, los elementos del código se refactorizan y se vuelven a poner a prueba en tantas veces como sea necesario, hasta que el test ya no dé errores. Esta estrategia permite enriquecer el software poco a poco con nuevas funciones, redactando nuevo código fuente tras cada test superado. Por este motivo, el TDD se considera un modelo incremental de desarrollo de software.
-
 Para el uso del TDD se deben combinar 2 metodologías: Test-first development (escribir las pruebas primero) y Refactoring (refactorización de código). Para esto, se usa un ciclo de desarrollo que consta de 3 partes principales:
 - La prueba debe fallar. (Red: Muchas herramientas muestran los fallos de las pruebas en rojo)
 - La prueba debe pasar. (Green: Al igual que lo anterior, las herramientas muestran las pruebas que pasan en verde)
 - Se debe mejorar el código. (Refactoring)
+
+El test-driven development se orienta según los resultados de los casos de prueba definidos por los desarrolladores. Su estructura cíclica garantiza que el código se transmita al sistema productivo únicamente cuando se hayan cumplido todos los requisitos del software. En otras palabras, los elementos del código se refactorizan y se vuelven a poner a prueba en tantas veces como sea necesario, hasta que el test ya no dé errores. Esta estrategia permite enriquecer el software poco a poco con nuevas funciones, redactando nuevo código fuente tras cada test superado. Por este motivo, el TDD se considera un modelo incremental de desarrollo de software.
+
+Es una metodología de desarrollo cuyo objetivo es crear primero las pruebas y luego escribir el software. Sus siglas en Inglés son: Test Driven Development y en español significa: Desarrollo guiado por pruebas.
+Este concepto no es nada nuevo, fue a finales de los años 80 cuando se comenzó a utilizar esta metodología de desarrollo.
 
 Complicaciones que puede haber:
 - Hay que pensar en lo que se quiere conseguir con el código y en cómo protegerlo para que no se rompa (probarlo).
@@ -52,7 +51,8 @@ Fuentes confiables confirman que el desarrollo basado en pruebas se conecta dire
 
 Pero las pruebas unitarias no debería ser la única capa de pruebas automatizadas de su sistema. También se expandir la capa de prueba unitaria mediante pruebas de integración, desarrollo impulsado por pruebas de aceptación (ATDD), desarrollo impulsado por el comportamiento (BDD) o, al menos, considerar dicha opción en su propio.
 
-## Inside-Out
+## Las distintias corrientes del TDD:
+### Inside-Out
 
 La escuela clásica (Inside-Out) se distingue por centrarse en la verificación del estado de los objetos, siendo por ello imprescindible que el contexto de los test siempre deba estar formado por `objetos reales`, configurados previamente. Para la correcta generación de estos contextos se pueden crear clases que nos ayuden.
 La existencia previa de estos `objetos reales`, implica que el diseño de nuestra solución irá creciendo poco a poco desde la base hasta la funcionalidad final. De ahí el sobrenombre de técnica Inside-out. 
@@ -65,7 +65,7 @@ Usando el enfoque Inside Out, el tablero y las notificaciones se pueden identifi
 
 El desarrollador se puede centrar primero en las entidades independientes, creando los test y las funcionalidades de esas entidades. Todas las funcionalidades de las entidades independientes van a funcionar perfectamente ya no requieren ningun tipo de interacciones con alguna otra entidad. Con esto, el desarrollador está abordando una pieza aislada de funcionalidad a la vez. Pero cuando se trata del Juego, que es el nivel superior, todas las piezas deben estar juntas, con las entidades individuales interactuando entre sí.
 
-Debido a que Inside Out TDD se enfoca inicialmente en las entidades individuales del sistema, el riesgo de que estas entidades no interactúen correctamente entre sí se lleva a una etapa posterior. Si las entidades no se comunican como se esperaba, se volverá a trabajar.
+Centrarse inicialmente en las entidades individuales hace que el riesgo de que estas entidades no interactúen correctamente entre sí se lleva a una etapa posterior. Si las entidades no se comunican como se esperaba, se volverá a trabajar.
 
 Esto demuestra que cuando se usa Inside Out TDD, no se requiere una comprensión completa del diseño del sistema al principio. Solo es necesario identificar una entidad para comenzar. Los detalles internos de esa entidad surgen mediante el uso de pruebas unitarias específicas, lo que lleva a un diseño que se adhiere bien al Principio de Responsabilidad Única (SRP). En la etapa inicial, no siempre está claro qué comportamiento debe exponerse en una entidad. Esto podría dar como resultado que se exponga más o menos comportamiento de lo necesario.
 
@@ -82,7 +82,7 @@ Con Inside Out, si hay un grupo de entidades que expresan un comportamiento, com
 |                                                                                |Probablemente terminará con un código que no será necesario en absoluto (YAGNI).                |
 		
 		
-## Outside-In
+### Outside-In
 
 La escuela de Londres (Outside-In) toma un enfoque distinto, centrándose en verificar que el comportamiento de los objetos es el esperado. Dado que este el objetivo final, verificar las correctas interacciones entre objetos, y no el estado en sí mismo de los objetos, mediante este enfoque podremos ahorrarnos todo el trabajo con los objetos reales (creación y mantenimiento) sustituyéndolos por dobles de test.
 
@@ -94,7 +94,7 @@ Las pruebas se basan en escenarios solicitados por el usuario y las entidades es
 
 Al enfocarse en un flujo completo a través del sistema desde el principio, se requiere conocimiento de cómo las diferentes partes del sistema interactúan entre sí. A medida que emergen las entidades, se mockean, lo que permite que sus detalles se difieran hasta más tarde. Este enfoque significa que el desarrollador necesita saber cómo probar las interacciones desde el principio, ya sea a través de un marco de simulación o escribiendo sus propios dobles de prueba. Luego, el desarrollador retrocederá, proporcionando la implementación real de las entidades falsificadas o simuladas a través de nuevas pruebas unitarias.
 
-Al usar Outside In TDD, el desarrollador necesita algún conocimiento previo de cómo se comunicarán las entidades en el sistema. El enfoque suele estar en cómo interactúan las entidades más que en sus detalles internos, de ahí el uso de pruebas de aceptación de alto nivel. En el exterior, las soluciones a menudo aplican la Ley de Deméter: nunca se crea una nueva entidad sin que la entidad primaria pregunte qué quiere de ella. Esto se adhiere bien al principio "Diga, no pregunte", y da como resultado que el estado solo se exponga si lo requieren otras entidades. 
+Al usar Outside In TDD, el enfoque suele estar en cómo interactúan las entidades más que en sus detalles internos, de ahí el uso de pruebas de aceptación de alto nivel. En el exterior, las soluciones a menudo aplican la Ley de Deméter: nunca se crea una nueva entidad sin que la entidad primaria pregunte qué quiere de ella. Esto se adhiere bien al principio "Diga, no pregunte", y da como resultado que el estado solo se exponga si lo requieren otras entidades. 
 Los detalles de implementación del diseño están en las pruebas. Un cambio de diseño generalmente da como resultado que las pruebas también se modifiquen. Esto puede agregar más riesgo o requerir más confianza para implementarlo.
 
 También es importante remarcar el uso de la técnica del doble bucle:
@@ -106,7 +106,7 @@ También es importante remarcar el uso de la técnica del doble bucle:
 |                                            -----------                         |                                          -----------                                        |
 | Comenzará con los requisitos del usuario, es decir, desde el inicio del Producto, desde cómo debería funcionar la aplicación.                                                                                                                                        | No hay forma de que los eventuales cambios en cualquier capa se puedan evitar por completo. |
 | Al bajar las capas, siempre podrá simular una conexión suelta hacia abajo, manteniendo así cada capa en una forma perfectamente comprobable y preservando un alto nivel de    modularidad, lo que significa capacidad de mantenimiento y capacidad de cambio a nivel de componente.                                                                                                                                                                   | Aunque bajar las capas requiere bastante tiempo, un desarrollador aún tendrá que hacer una                                                                                            evaluación de los requisitos del usuario en comparación con las API existentes e inducir cambios                                                                                      potenciales si es necesario.                                                                 |
-|	TDD será tan fluido como con el enfoque Inside-Out, pero además podrá aplicar BDD completo de todas las capas desde el principio.                                                                                                                                     | Problema de actulizar el doble cuando cambia el comportamiento de la clase del doble.       |
+|	TDD será tan fluido como con el enfoque Inside-Out, pero además podrá aplicar BDD completo de todas las capas desde el principio.                                                                                                                               | Problema de actulizar el doble cuando cambia el comportamiento de la clase del doble.       |
 |  Con cada paso de desarrollo hacia la API, verá más fácil y rápido si es necesario un cambio. Esto le da más tiempo a la API para ser adaptada (o reemplazada por otra generalmente de Middleware) y el cambio de API no requerirá ningún cambio en el código como lo hace con Inside-Out.
 En consecuencia, no habrá muchos cambios oscilantes hacia arriba y hacia abajo de las capas.
 La API se puede adaptar a las necesidades del producto y no al revés.             |                                                                                              
