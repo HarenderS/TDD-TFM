@@ -51,6 +51,14 @@ Fuentes confiables confirman que el desarrollo basado en pruebas se conecta dire
 
 Pero las pruebas unitarias no debería ser la única capa de pruebas automatizadas de su sistema. También se expandir la capa de prueba unitaria mediante pruebas de integración, desarrollo impulsado por pruebas de aceptación (ATDD), desarrollo impulsado por el comportamiento (BDD) o, al menos, considerar dicha opción en su propio.
 
+#### Los costes
+¿El costo real del cambio es exponencial o es plano? 
+No hay razón para que el costo de realizar un cambio en el software deba ser tan alto como hace 30 años. Definitivamente se puede hacerlo mejor hoy, con mejores herramientas y formas mejores y más baratas de desarrollar software. Las claves para minimizar los costes del cambio pueden ser:
+- Poner el software en manos de los clientes lo más rápido posible. Es muy probable que ninguna organización realmente necesite impulsar cambios de software de 10 a 50 o 100 veces al día, pero tampoco se desea esperar meses o años para recibir comentarios. Entregar menos, pero más a menudo. Y debido a que se van a realizar entregas con más frecuencia, tiene sentido crear una canalización de entrega continua para que se puedan impulsar los cambios de manera eficiente y con confianza. Para el desarrollo de software usar lean y tal vez Kanban para identificar y eliminar el desperdicio y minimizar el tiempo del ciclo.
+- Es importante no perder tiempo y dinero iterando cuando no es necesario. Pasar suficiente tiempo por adelantado en la comprensión de los requisitos y en el diseño para hacerlo bien al menos en su mayor parte la primera vez, se puede ahorrar mucho, más adelante.
+- Ya sea que se esté trabajando de forma incremental e iterativa, o secuencialmente, tiene sentido detectar errores lo más temprano que se pueda, ya sea que se haga a través del desarrollo y implementación de prueba primero, o talleres de requisitos y revisiones de código, lo que sea que más funcional.
+
+
 ## Las distintias corrientes del TDD:
 ### Inside-Out
 
