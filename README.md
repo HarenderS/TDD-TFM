@@ -51,6 +51,9 @@ Fuentes confiables confirman que el desarrollo basado en pruebas se conecta dire
 
 Pero las pruebas unitarias no debería ser la única capa de pruebas automatizadas de su sistema. También se expandir la capa de prueba unitaria mediante pruebas de integración, desarrollo impulsado por pruebas de aceptación (ATDD), desarrollo impulsado por el comportamiento (BDD) o, al menos, considerar dicha opción en su propio.
 
+#### Las críticas
+En los experimentos que realizó IBM, se ve una clara diferencia en la cantidad de los test unitarios realizados por los grupos que desarrollaban los distintos proyectos. El grupo que estaba haciendo el proyecto sin usar el TDD, no hizo los test unitarios hasta finalizar el desarrollo. Los test realizados despues de la finalización fueron muy pobres y no tenian una buena cobertura. Por último, los test de aceptación que tenian que pasar los dos proyectos no se basaron en los test realizados por los grupos sino que los tests los hizó un grupo distintos basandose en los requitos del proyecto.
+
 #### Los costes
 ¿El costo real del cambio es exponencial o es plano? 
 No hay razón para que el costo de realizar un cambio en el software deba ser tan alto como hace 30 años. Definitivamente se puede hacerlo mejor hoy, con mejores herramientas y formas mejores y más baratas de desarrollar software. Las claves para minimizar los costes del cambio pueden ser:
